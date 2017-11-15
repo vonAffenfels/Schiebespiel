@@ -123,7 +123,8 @@ export class PlayState extends Phaser.State {
 			}
 
 			let song = Phaser.ArrayUtils.getRandomItem(this.game.config.get("songs"));
-			window.open(song, "_blank");
+			document.getElementById('ytembed').style.display = 'block';
+			document.getElementById('ytembed').src = "http://www.youtube.com/embed/" + song + "?autoplay=1&fs=0&rel=0";			
 		}
 	}
 
