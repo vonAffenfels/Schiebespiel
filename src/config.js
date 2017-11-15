@@ -26,6 +26,18 @@ export default class GameConfig {
 			scoreGain:  		50,
 			scoreBegin: 		10000,
 			numImages: 			4, 
+
+			songs:    			[
+				"https://www.youtube.com/watch?v=LvWBz1pLXps",
+				"https://www.youtube.com/watch?v=y3LZr6dSM8A",
+				"https://www.youtube.com/watch?v=I4jznFlGMUo",
+				"https://www.youtube.com/watch?v=5blg8NegJDY",
+				"https://www.youtube.com/watch?v=Cn3NXlEMyAk",
+				"https://www.youtube.com/watch?v=RSzhPoUH-G8",
+				"https://www.youtube.com/watch?v=1VlD6fKWQDk",
+				"https://www.youtube.com/watch?v=CuIn95h10ZQ",
+				"https://www.youtube.com/watch?v=Cb5oXKa8phg"
+			]
 		};
 	}
 

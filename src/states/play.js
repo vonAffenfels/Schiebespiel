@@ -121,6 +121,9 @@ export class PlayState extends Phaser.State {
 				this.newHighscore.visible = true;
 				this.game.save.set("highscore", this.score);
 			}
+
+			let song = Phaser.ArrayUtils.getRandomItem(this.game.config.get("songs"));
+			window.open(song, "_blank");
 		}
 	}
 
