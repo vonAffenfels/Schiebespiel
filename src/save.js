@@ -5,7 +5,7 @@ export default class GameSave {
 		this.game = game;
 
 		this._data = {
-			version: "vA-1.0.0",
+			version: "vA-1.0.3",
 			highscore: 0
 		};
 

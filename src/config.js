@@ -12,7 +12,7 @@ export default class GameConfig {
 				width: "100%",
 				height: "100%",
 				enableDebug: false,
-				backgroundColor: '#FFFFFF',
+				backgroundColor: '#ffffff',
 				renderer: Phaser.CANVAS,
 				name: "Schiebespiel"
 			},
@@ -23,7 +23,8 @@ export default class GameConfig {
 			},
 
 			defaultState: 		Enums.States.BOOT,
-			scoreGain:  		10,
+			scoreGain:  		50,
+			scoreBegin: 		10000,
 			numImages: 			4, 
 		};
 	}

@@ -16,8 +16,10 @@ export class LoadingState extends Phaser.State {
 	    	this.game.load.spritesheet("image-" + i, "assets/images/image-" + i + ".png", 100, 100, 9);
 	    }
 
-	    this.game.load.spritesheet("buttons", "assets/images/buttons.png", 100, 100, 2);
-	    this.load.bitmapFont("fnt_va", 'assets/fonts/fnt_va.png', 'assets/fonts/fnt_va.fnt');
+	    this.game.load.image("button_start", "assets/images/button_start.png");
+	    this.game.load.image("button_restart", "assets/images/button_neustart.png");
+	    this.game.load.image("border", "assets/images/border.png");
+	    this.game.load.bitmapFont("fnt_va", 'assets/fonts/fnt_va.png', 'assets/fonts/fnt_va.fnt');
 	}
 
 	create() {
