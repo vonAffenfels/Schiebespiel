@@ -12,8 +12,8 @@ export class PlayState extends Phaser.State {
 		this.score = 0;
 		this.hasWon = false;
 
-		document.getElementById('ytembed').style.display = 'none';
-		document.getElementById('ytembed').src = "";
+		//document.getElementById('ytembed').style.display = 'none';
+		//document.getElementById('ytembed').src = "";
 
 		this._shuffle();
 		if (!this._isSolvable()) {
