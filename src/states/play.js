@@ -12,8 +12,8 @@ export class PlayState extends Phaser.State {
 		this.score = 0;
 		this.hasWon = false;
 
-		//document.getElementById('ytembed').style.display = 'none';
-		//document.getElementById('ytembed').src = "";
+		document.getElementById('ytembed').style.display = 'none';
+		document.getElementById('ytembed').src = "";
 
 		this._shuffle();
 		if (!this._isSolvable()) {
@@ -126,19 +126,9 @@ export class PlayState extends Phaser.State {
 			}
 
 			let song = Phaser.ArrayUtils.getRandomItem(this.game.config.get("songs"));
-			//document.getElementById('ytembed').style.display = 'block';
-			//document.getElementById('ytembed').src = ;			
-			this._createIFrame(song);
+			document.getElementById('ytembed').style.display = 'block';
+			document.getElementById('ytembed').src = "https://www.youtube.com/embed/" + song + "?autoplay=1&fs=0&rel=0";			
 		}
-	}
-
-	_createIFrame(song) {
-		var ifrm = document.createElement("iframe");
-		ifrm.setAttribute("id", "ytembed");
-		ifrm.setAttribute("src", "https://www.youtube.com/embed/" + song + "?autoplay=1&fs=0&rel=0");
-		ifrm.setAttribute("frameborder", "0");
-		ifrm.setAttribute("allowfullscreen", "allowfullscreen");
-		document.body.appendChild(ifrm);
 	}
 
 	_getIndexByGrid(x, y) {
