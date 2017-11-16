@@ -12,8 +12,10 @@ export class PlayState extends Phaser.State {
 		this.score = 0;
 		this.hasWon = false;
 
-		document.getElementById('ytembed').style.display = 'none';
-		document.getElementById('ytembed').src = "";
+		let frame = document.getElementById("ytembed");
+		if (frame) {
+			document.body.removeChild(frame);
+		}
 
 		this._shuffle();
 		if (!this._isSolvable()) {
@@ -30,6 +32,15 @@ export class PlayState extends Phaser.State {
 		}
 
 		this._createDisplay();
+	}
+
+	_createFrame(song) {
+		let frame = document.createElement('iframe');
+		frame.setAttribute("id", "ytembed");
+		frame.setAttribute("src", "https://www.youtube.com/embed/" + song + "?autoplay=1&fs=0&rel=0");
+		frame.setAttribute("frameborder", "0");
+		frame.setAttribute("allowfullscreen", "allowfullscreen");
+		document.body.appendChild(frame);
 	}
 
 	_shuffle() {
@@ -126,8 +137,7 @@ export class PlayState extends Phaser.State {
 			}
 
 			let song = Phaser.ArrayUtils.getRandomItem(this.game.config.get("songs"));
-			document.getElementById('ytembed').style.display = 'block';
-			document.getElementById('ytembed').src = "https://www.youtube.com/embed/" + song + "?autoplay=1&fs=0&rel=0";			
+			this._createFrame(song);
 		}
 	}
 
