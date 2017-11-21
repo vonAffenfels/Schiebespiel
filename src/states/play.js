@@ -212,9 +212,8 @@ export class PlayState extends Phaser.State {
 			});
 		}
 
-		this.button = this.game.add.sprite(centerX, this.game.world.height - 140, "button_restart");
+		this.button = this.game.add.sprite(centerX, this.game.world.height - 210, "button_restart");
 		this.button.anchor.setTo(0.5);
-		this.button.scale.setTo(2);
 		this.button.inputEnabled = true;
 		this.button.events.onInputDown.add(() => {
 			// Restart
@@ -222,17 +221,17 @@ export class PlayState extends Phaser.State {
 		});
 
 		// Draw Wining Text
-		this.winning = this.game.add.bitmapText(centerX, startY + 150, "fnt_va", "GEWONNEN", fontSizeTitle);
+		this.winning = this.game.add.bitmapText(centerX, startY + 300, "fnt_va", "GEWONNEN", fontSizeTitle);
 		this.winning.anchor.setTo(0.5);
 		this.winning.visible = false;
 
 		// Draw Score Text
-		this.scoreText = this.game.add.bitmapText(centerX, startY + 200, "fnt_va", "SCORE: " + this.score, fontSizeScore);
+		this.scoreText = this.game.add.bitmapText(centerX, startY + 400, "fnt_va", "SCORE: " + this.score, fontSizeScore);
 		this.scoreText.anchor.setTo(0.5);
 		this.scoreText.visible = false;
 
 		// Draw New Highscore Text
-		this.newHighscore = this.game.add.bitmapText(centerX, startY + 235, "fnt_va", "NEUER HIGHSCORE", fontSizeScore);
+		this.newHighscore = this.game.add.bitmapText(centerX, startY + 470, "fnt_va", "NEUER HIGHSCORE", fontSizeScore);
 		this.newHighscore.anchor.setTo(0.5);
 		this.newHighscore.visible = false;
 	}

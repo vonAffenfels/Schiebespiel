@@ -40,9 +40,8 @@ export class MenuState extends Phaser.State {
 			this.imageTiles[i].anchor.setTo(0);
 		}
 
-		this.button = this.game.add.sprite(centerX, this.game.world.height - 140, "button_start");
+		this.button = this.game.add.sprite(centerX, this.game.world.height - 210, "button_start");
 		this.button.anchor.setTo(0.5);
-		this.button.scale.setTo(2);
 		this.button.inputEnabled = true;
 		this.button.events.onInputDown.add(() => {
 			this.game.state.start(Enums.States.PLAY);
