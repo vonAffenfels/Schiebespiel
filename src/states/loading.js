@@ -13,7 +13,7 @@ export class LoadingState extends Phaser.State {
 	    this.load.setPreloadSprite(loadingBar);
 
 	    for (let i = 0; i < this.game.config.get("numImages"); i++) {
-	    	this.game.load.spritesheet("image-" + i, "assets/images/image-" + i + ".png", 100, 100, 9);
+	    	this.game.load.spritesheet("image-" + i, "assets/images/image-" + i + ".png", 200, 200, 9);
 	    }
 
 	    this.game.load.image("button_start", "assets/images/button_start.png");

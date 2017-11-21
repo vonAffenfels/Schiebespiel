@@ -9,7 +9,7 @@ export class MenuState extends Phaser.State {
 
 	create() {
 		let centerX = this.game.world.centerX;
-		let titleY = 58;
+		let titleY = 116;
 
 		let config 	= this.game.config;
 		let fontSizeTitle = config.get("fontSize.title");
@@ -23,11 +23,11 @@ export class MenuState extends Phaser.State {
 		this.score = this.game.add.bitmapText(centerX, this.title.y + fontSizeTitle, "fnt_va", "HIGHSCORE: " + this.game.save.get("highscore"), fontSizeScore);
 		this.score.anchor.setTo(0.5);
 
-		let startX = centerX - 150;
+		let startX = centerX - 300;
 		let startY = this.score.y + fontSizeScore;
 
 		// Draw border
-		this.border = this.game.add.image(startX - 5, startY - 5, "border");
+		this.border = this.game.add.image(startX - 10, startY - 10, "border");
 		this.border.anchor.setTo(0);
 
 		// Draw tiles (complete image)
@@ -36,12 +36,13 @@ export class MenuState extends Phaser.State {
 			let x = Math.floor(i % 3);
 			let y = Math.floor((i - x) / 3);
 
-			this.imageTiles[i] = this.game.add.sprite(x * 100 + startX, y * 100 + startY, "image-" + this.game._getSelectedImage(), i);
+			this.imageTiles[i] = this.game.add.sprite(x * 200 + startX, y * 200 + startY, "image-" + this.game._getSelectedImage(), i);
 			this.imageTiles[i].anchor.setTo(0);
 		}
 
-		this.button = this.game.add.sprite(centerX, this.game.world.height - 70, "button_start");
+		this.button = this.game.add.sprite(centerX, this.game.world.height - 140, "button_start");
 		this.button.anchor.setTo(0.5);
+		this.button.scale.setTo(2);
 		this.button.inputEnabled = true;
 		this.button.events.onInputDown.add(() => {
 			this.game.state.start(Enums.States.PLAY);

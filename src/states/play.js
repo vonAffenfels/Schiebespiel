@@ -190,11 +190,11 @@ export class PlayState extends Phaser.State {
 		this.turnsText = this.game.add.bitmapText(centerX, this.title.y + fontSizeTitle, "fnt_va", "ZÜGE: " + this.turns, fontSizeScore);
 		this.turnsText.anchor.setTo(0.5);
 
-		let startX = centerX - 150;
+		let startX = centerX - 300;
 		let startY = this.turnsText.y + fontSizeScore;
 
 		// Draw border
-		this.border = this.game.add.image(startX - 5, startY - 5, "border");
+		this.border = this.game.add.image(startX - 10, startY - 10, "border");
 		this.border.anchor.setTo(0);
 
 		// Draw tiles
@@ -203,7 +203,7 @@ export class PlayState extends Phaser.State {
 			let x = Math.floor(i % 3);
 			let y = Math.floor((i - x) / 3);
 
-			this.imageTiles[i] = this.game.add.sprite(x * 100 + startX, y * 100 + startY, "image-" + this.game._getSelectedImage(), this.tiles[i]);
+			this.imageTiles[i] = this.game.add.sprite(x * 200 + startX, y * 200 + startY, "image-" + this.game._getSelectedImage(), this.tiles[i]);
 			this.imageTiles[i].anchor.setTo(0);
 			this.imageTiles[i].visible = this.currentFreeTile != i;
 			this.imageTiles[i].inputEnabled = true;
@@ -212,8 +212,9 @@ export class PlayState extends Phaser.State {
 			});
 		}
 
-		this.button = this.game.add.sprite(centerX, this.game.world.height - 70, "button_restart");
+		this.button = this.game.add.sprite(centerX, this.game.world.height - 140, "button_restart");
 		this.button.anchor.setTo(0.5);
+		this.button.scale.setTo(2);
 		this.button.inputEnabled = true;
 		this.button.events.onInputDown.add(() => {
 			// Restart

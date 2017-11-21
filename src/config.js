@@ -6,8 +6,10 @@ export default class GameConfig {
 	constructor() {
 		this._data = {
 			game: {
-				baseWidth: 320,
-				baseHeight: 568,
+				//baseWidth: 320,
+				//baseHeight: 568,
+				baseWidth: 750,
+				baseHeight: 1334,
 				maxWidth: 768,
 				width: "100%",
 				height: "100%",
@@ -18,8 +20,8 @@ export default class GameConfig {
 			},
 
 			fontSize: {
-				title: 			42,
-				score: 			32
+				title: 			84,
+				score: 			64
 			},
 
 			defaultState: 		Enums.States.BOOT,
