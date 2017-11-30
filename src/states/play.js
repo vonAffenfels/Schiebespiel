@@ -32,6 +32,7 @@ export class PlayState extends Phaser.State {
 		}
 
 		this._createDisplay();
+		this.mooveAudio = this.game.add.audio("snd_moove");
 	}
 
 	_createFrame(song) {
@@ -89,6 +90,7 @@ export class PlayState extends Phaser.State {
 			return;
 		}
 
+		this.mooveAudio.play();
 		this._swapNeighbors(index, freeNeighbor);
 		
 		this.turns++;

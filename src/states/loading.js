@@ -20,6 +20,8 @@ export class LoadingState extends Phaser.State {
 	    this.game.load.image("button_restart", "assets/images/button_neustart.png");
 	    this.game.load.image("border", "assets/images/border.png");
 	    this.game.load.bitmapFont("fnt_va", 'assets/fonts/fnt_va.png', 'assets/fonts/fnt_va.fnt');
+
+	    this.load.audio("snd_moove", ["assets/sounds/moove.mp3"]);
 	}
 
 	create() {
